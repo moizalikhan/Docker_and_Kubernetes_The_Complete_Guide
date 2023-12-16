@@ -1,17 +1,18 @@
-Runtime--> start and stop containers, runc, containerd
+### Learnings about Docker 
+* Runtime--> start and stop containers, runc, containerd
 
-Engine--> Daemon, Restapi, Dockercli Client server architecture.
+* Engine--> Daemon, Restapi, Dockercli Client server architecture.
 
-Docker image --> receipe
-instructions with source code
-cotainer is an running instance of an image
+* Docker image --> receipe
+* instructions with source code
+* cotainer is an running instance of an image
 
-Dockerfile-->image-->Container
-you run image to make a container
+* Dockerfile-->image-->Container
+* you run image to make a container
 
-images are in layer, immutable file
+* images are in layer, immutable file
 
-docker file from base image:
+* docker file from base image:
     from ubuntu
     maintainer
     run apt-get update
@@ -27,32 +28,33 @@ Docker-compose up
 yaml files has less clutter than json files.
 
 Docker-compose file Example:
-
------
+----
 version: "3.8"
 
 services:
-    Client:
-        build: ./frontend
-        ports: 
-            - 3000:3000
-    api:
-        build: ./backend
-        ports: 
-            - 3001:3001
-        environment:
-            DB_URL: mongodb://db/appname
-    db:
-        image: mongo:4.0-xenial
-        ports: 
-            - 27017:27017
-        volumes:
-            - app:/data/db
+  client:
+    build: ./frontend
+    ports:
+      - 3000:3000
+
+  api:
+    build: ./backend
+    ports:
+      - 3001:3001
+    environment:
+      DB_URL: mongodb://db/appname
+
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - app:/data/db
 
 volumes:
-    app: 
------
+  app:
 
+----
 Docker-compose build
 Docker-compose up
 Docker-compose down
