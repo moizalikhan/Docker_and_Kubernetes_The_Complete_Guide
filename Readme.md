@@ -19,13 +19,13 @@
     cmd "echo", "hello world"
     docker build -t myimage:1.01 .(filepath)
 
-client--> daemon-->grpc-->(containerd--> shim--> runc)
+* client--> daemon-->grpc-->(containerd--> shim--> runc)
 
-Docker-Compose for running multiple containers.
+* Docker-Compose for running multiple containers.
 
-Docker-compose up
+* Docker-compose up
 
-yaml files has less clutter than json files.
+* yaml files has less clutter than json files.
 
 Docker-compose file Example:
 ----
@@ -55,9 +55,10 @@ volumes:
   app:
 
 ----
-Docker-compose build
-Docker-compose up
-Docker-compose down
 
-3 networks bridge host none
-dns resolver
+* Docker-compose build
+* Docker-compose up
+* Docker-compose down
+
+* 3 networks bridge host none
+* dns resolver
